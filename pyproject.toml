@@ -13,7 +13,7 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest==9.0.3", "ruff==0.14.1"]
-board = ["matplotlib==3.9.2"]
+board = ["matplotlib==3.11.2"]
 
 [project.scripts]
 entagents = "entagents.cli:main"
