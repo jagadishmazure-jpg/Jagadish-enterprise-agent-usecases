@@ -25,3 +25,11 @@ Scope: the shared runtime and the agents in this repo, run locally on synthetic 
 | LLM10 Unbounded consumption | token meter, routing, retry budget, cache |
 
 Residual risk: paraphrased injections, PII types not covered, and rules that do not generalise. See [limitations.md](limitations.md).
+
+## Small step router
+
+| Threat | Control |
+|---|---|
+| Overconfident router approves a risky publish (elevation of privilege) | approval gate after the router, always |
+| Corrupt or missing weights (denial of service) | rule-router fallback |
+| Hiding a routing choice (repudiation) | hash-chained audit of every decision |

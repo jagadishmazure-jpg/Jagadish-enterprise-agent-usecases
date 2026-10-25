@@ -1,0 +1,137 @@
+{
+  "data": "synthetic (logged states from real runs of the 22 agents, seeded perturbations)",
+  "prices": "simulated: small model $0 and 0.2 ms per step; stronger decider $0.004 and 900 ms per step",
+  "states": {
+    "train": 4856,
+    "validation": 1628,
+    "test": 1618,
+    "runs": 1176
+  },
+  "model": {
+    "type": "multinomial logistic regression, 3 heads",
+    "features": 16,
+    "params": 144
+  },
+  "target_agreement": 0.97,
+  "tuned_threshold": 0.9,
+  "test": {
+    "threshold": 0.9,
+    "steps": 1618,
+    "small_share": 0.8554,
+    "agreement_vs_big": 0.9734,
+    "accuracy_vs_truth": 0.9938,
+    "big_accuracy_vs_truth": 0.9796,
+    "unsafe_steps": 13,
+    "unsafe_caught": 13,
+    "sim_cost_usd": 0.936,
+    "sim_cost_always_big_usd": 6.472,
+    "sim_cost_saved_pct": 0.8554,
+    "sim_latency_ms": 210876.8,
+    "sim_latency_always_big_ms": 1456200.0,
+    "sim_latency_saved_pct": 0.8552,
+    "pending_approvals": 26,
+    "audit_entries": 1618,
+    "audit_chain_ok": true
+  },
+  "rule_router_accuracy_vs_truth": 0.9635,
+  "sweep_test": [
+    {
+      "threshold": 0.3,
+      "small_share": 0.9988,
+      "agreement_vs_big": 0.9425,
+      "accuracy_vs_truth": 0.9611,
+      "sim_cost_saved_pct": 0.9988
+    },
+    {
+      "threshold": 0.35,
+      "small_share": 0.9951,
+      "agreement_vs_big": 0.945,
+      "accuracy_vs_truth": 0.9635,
+      "sim_cost_saved_pct": 0.9951
+    },
+    {
+      "threshold": 0.4,
+      "small_share": 0.9944,
+      "agreement_vs_big": 0.9456,
+      "accuracy_vs_truth": 0.9642,
+      "sim_cost_saved_pct": 0.9944
+    },
+    {
+      "threshold": 0.45,
+      "small_share": 0.9932,
+      "agreement_vs_big": 0.9456,
+      "accuracy_vs_truth": 0.9642,
+      "sim_cost_saved_pct": 0.9932
+    },
+    {
+      "threshold": 0.5,
+      "small_share": 0.9907,
+      "agreement_vs_big": 0.9468,
+      "accuracy_vs_truth": 0.9654,
+      "sim_cost_saved_pct": 0.9907
+    },
+    {
+      "threshold": 0.55,
+      "small_share": 0.9771,
+      "agreement_vs_big": 0.9524,
+      "accuracy_vs_truth": 0.9716,
+      "sim_cost_saved_pct": 0.9771
+    },
+    {
+      "threshold": 0.6,
+      "small_share": 0.9642,
+      "agreement_vs_big": 0.9574,
+      "accuracy_vs_truth": 0.9765,
+      "sim_cost_saved_pct": 0.9642
+    },
+    {
+      "threshold": 0.65,
+      "small_share": 0.9549,
+      "agreement_vs_big": 0.9611,
+      "accuracy_vs_truth": 0.979,
+      "sim_cost_saved_pct": 0.9549
+    },
+    {
+      "threshold": 0.7,
+      "small_share": 0.9444,
+      "agreement_vs_big": 0.9611,
+      "accuracy_vs_truth": 0.9802,
+      "sim_cost_saved_pct": 0.9444
+    },
+    {
+      "threshold": 0.75,
+      "small_share": 0.9295,
+      "agreement_vs_big": 0.9642,
+      "accuracy_vs_truth": 0.9839,
+      "sim_cost_saved_pct": 0.9295
+    },
+    {
+      "threshold": 0.8,
+      "small_share": 0.9079,
+      "agreement_vs_big": 0.9697,
+      "accuracy_vs_truth": 0.9895,
+      "sim_cost_saved_pct": 0.9079
+    },
+    {
+      "threshold": 0.85,
+      "small_share": 0.8881,
+      "agreement_vs_big": 0.9716,
+      "accuracy_vs_truth": 0.9913,
+      "sim_cost_saved_pct": 0.8881
+    },
+    {
+      "threshold": 0.9,
+      "small_share": 0.8554,
+      "agreement_vs_big": 0.9734,
+      "accuracy_vs_truth": 0.9938,
+      "sim_cost_saved_pct": 0.8554
+    },
+    {
+      "threshold": 0.95,
+      "small_share": 0.8239,
+      "agreement_vs_big": 0.974,
+      "accuracy_vs_truth": 0.9944,
+      "sim_cost_saved_pct": 0.8239
+    }
+  ]
+}

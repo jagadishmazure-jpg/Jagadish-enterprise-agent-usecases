@@ -108,6 +108,28 @@ def catalog(r: dict) -> dict:
                         "data": "synthetic",
                     }
                 )
+    rr = json.loads((ROOT / "results/router.json").read_text())
+    t = rr["test"]
+    items.append(
+        {
+            "name": "small-router",
+            "title": "Small step router with confidence handoff",
+            "level": "Advanced",
+            "tech": "Pure-Python logistic regression (CPU)",
+            "industry": "Cross-industry",
+            "tags": ["routing", "cost-control", "confidence-handoff", "human-approval"],
+            "summary": "A tiny classifier picks each agent step (next worker, safe, stop) and hands low-confidence steps to a stronger, simulated decider.",
+            "guardrails": ["risky publish always parked for a named approver", "unsafe verdict blocks the step", "rule-router fallback", "hash-chained audit of every decision"],
+            "batch": "router",
+            "run": "python -m entagents.router.evaluate",
+            "page": f"{REPO}/blob/main/docs/small-router.md",
+            "small_share": t["small_share"],
+            "agreement_vs_big": t["agreement_vs_big"],
+            "sim_cost_saved_pct": t["sim_cost_saved_pct"],
+            "test_steps": t["steps"],
+            "data": "synthetic",
+        }
+    )
     return {"repo": REPO, "schema": "agent-card/v1", "agents": items}
 
 

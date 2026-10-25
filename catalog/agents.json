@@ -573,6 +573,34 @@
       "task_score": 1.0,
       "task_cases": 9,
       "data": "synthetic"
+    },
+    {
+      "name": "small-router",
+      "title": "Small step router with confidence handoff",
+      "level": "Advanced",
+      "tech": "Pure-Python logistic regression (CPU)",
+      "industry": "Cross-industry",
+      "tags": [
+        "routing",
+        "cost-control",
+        "confidence-handoff",
+        "human-approval"
+      ],
+      "summary": "A tiny classifier picks each agent step (next worker, safe, stop) and hands low-confidence steps to a stronger, simulated decider.",
+      "guardrails": [
+        "risky publish always parked for a named approver",
+        "unsafe verdict blocks the step",
+        "rule-router fallback",
+        "hash-chained audit of every decision"
+      ],
+      "batch": "router",
+      "run": "python -m entagents.router.evaluate",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/small-router.md",
+      "small_share": 0.8554,
+      "agreement_vs_big": 0.9734,
+      "sim_cost_saved_pct": 0.8554,
+      "test_steps": 1618,
+      "data": "synthetic"
     }
   ]
 }
