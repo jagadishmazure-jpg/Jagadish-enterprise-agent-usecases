@@ -520,6 +520,59 @@
       "task_score": 1.0,
       "task_cases": 5,
       "data": "synthetic"
+    },
+    {
+      "name": "competitive-analysis",
+      "title": "Competitive analysis (multi-step)",
+      "level": "Advanced",
+      "tech": "Plan, retrieve, extract, compare",
+      "industry": "Strategy and product",
+      "tags": [
+        "multi-step",
+        "research",
+        "citations",
+        "fictional-companies"
+      ],
+      "summary": "Plans comparison dimensions, gathers cited facts for each fictional company, builds a matrix and names leaders only where sources exist.",
+      "guardrails": [
+        "every matrix cell cites a fact or says no source",
+        "leaders picked only from cited cells",
+        "fictional companies only",
+        "audit log"
+      ],
+      "batch": 5,
+      "run": "entagents run competitive-analysis",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/competitive-analysis.md",
+      "task_score": 1.0,
+      "task_cases": 5,
+      "data": "synthetic"
+    },
+    {
+      "name": "debate-judge",
+      "title": "Multi-agent debate with a judge",
+      "level": "Advanced",
+      "tech": "Two debaters + evidence-scored judge",
+      "industry": "Decision support",
+      "tags": [
+        "multi-agent",
+        "llm-as-judge",
+        "bias-testing",
+        "citations"
+      ],
+      "summary": "Two agents argue a decision from shared evidence; a judge scores verified citations, penalises made-up ones and is checked for order and length bias.",
+      "guardrails": [
+        "judge scores verified citations only",
+        "fabricated citations penalised",
+        "both speaking orders judged (order-flip rate)",
+        "length ignored (verbosity probe)",
+        "audit log"
+      ],
+      "batch": 5,
+      "run": "entagents run debate-judge",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/debate-judge.md",
+      "task_score": 1.0,
+      "task_cases": 9,
+      "data": "synthetic"
     }
   ]
 }

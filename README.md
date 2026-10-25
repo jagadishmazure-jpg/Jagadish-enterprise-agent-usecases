@@ -1,17 +1,17 @@
 # Enterprise agent use cases on one governed runtime
 
-**Recruiter summary.** Twenty-two business agents (SQL questions, code review, resume matching, document Q&A, invoice extraction and more) are being built here, all running through one shared runtime. That runtime screens for prompt injection, removes personal data, limits tools, routes and caches requests, budgets retries, enforces citations, waits for a human before risky actions, and writes a tamper-evident audit log. Everything runs offline with deterministic local logic, and every number below comes from a real run on synthetic data.
+**Recruiter summary.** Twenty-two business agents (SQL questions, code review, resume matching, document Q&A, invoice extraction, a debate judged for bias and more) are built here, all running through one shared runtime. That runtime screens for prompt injection, removes personal data, limits tools, routes and caches requests, budgets retries, enforces citations, waits for a human before risky actions, and writes a tamper-evident audit log. Everything runs offline with deterministic local logic, and every number below comes from a real run on synthetic data.
 
 <!-- BEGIN:headline -->
 | What | Measured (synthetic data, deterministic local run) |
 |---|---|
-| Agents built | 20 of 22 (batches 4 of 5) |
-| Task eval cases | 182, mean task score 97.4% |
+| Agents built | 22 of 22 (batch 5 of 5 complete) |
+| Task eval cases | 196, mean task score 97.6% |
 | Planted prompt injection blocked | 100% of agents |
 | Planted email leaked to output | 0% of agents |
 | Audit chains valid | True |
-| Demo run, simulated cost (unit prices, not real spend) | $0.000766 |
-| Tests | 169 |
+| Demo run, simulated cost (unit prices, not real spend) | $0.001123 |
+| Tests | 184 |
 <!-- END:headline -->
 
 ![evidence board](results/evidence_board.png)
@@ -43,6 +43,8 @@ Each agent has its own page with level, tech, industry, tags, run command, real 
 | 18 | [Invoice extraction](docs/agents/invoice-extract.md) | Intermediate | Finance operations | Regex extraction + strict schema + reconciliation | 100.0% (8) |
 | 19 | [Policy compliance check](docs/agents/policy-compliance.md) | Beginner | Governance, risk and compliance | Rules engine over configuration | 100.0% (8) |
 | 20 | [Incident summary](docs/agents/incident-summary.md) | Intermediate | IT operations | Log parser + temporal correlation | 100.0% (5) |
+| 21 | [Competitive analysis (multi-step)](docs/agents/competitive-analysis.md) | Advanced | Strategy and product | Plan, retrieve, extract, compare | 100.0% (5) |
+| 22 | [Multi-agent debate with a judge](docs/agents/debate-judge.md) | Advanced | Decision support | Two debaters + evidence-scored judge | 100.0% (9) |
 <!-- END:agents -->
 
 ## Purpose and who it is for
@@ -86,7 +88,7 @@ python scripts/render_docs.py       # regenerate agent pages, catalog JSON and t
 ```
 
 Test count: <!-- BEGIN:tests -->
-**169 tests**
+**184 tests**
 <!-- END:tests -->
 
 There is no cloud path. The "model tiers" are deterministic local functions; the cost line uses made-up unit prices to show the accounting and is labelled simulated.
@@ -118,9 +120,10 @@ Deterministic rules stand in for models, so coverage is narrow by design. Known 
 | Batch 2: issue triage, document Q&A, web research (offline), email drafting, support escalation | Built |
 | Batch 3: unit test generator, documentation writer, news briefing, travel planner, recipe recommendation | Built |
 | Batch 4: stock research (simulated), contract clauses, invoice extraction, policy compliance, incident summary | Built |
-| Batch 5: competitive analysis, multi-agent debate with judge | Planned |
+| Batch 5: competitive analysis, multi-agent debate with judge | Built |
 | Catalog metadata export (`catalog/agents.json`) | Built |
 | Optional local LLM backend behind the same interface | Planned |
+| Judge calibration against human labels (Cohen's kappa) for the debate agent | Planned |
 | Cloud deployment | Not planned (offline by design) |
 
 ## Docs

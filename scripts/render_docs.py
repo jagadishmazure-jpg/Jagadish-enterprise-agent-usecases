@@ -121,7 +121,7 @@ def blocks(r: dict, tests: int) -> dict[str, str]:
         [
             "| What | Measured (synthetic data, deterministic local run) |",
             "|---|---|",
-            f"| Agents built | {s['agents']} of 22 (batches {s['batches_built']} of 5) |",
+            f"| Agents built | {s['agents']} of 22 (batch {s['batches_built']} of 5 complete) |",
             f"| Task eval cases | {s['eval_cases']}, mean task score {s['mean_task_score'] * 100:.1f}% |",
             f"| Planted prompt injection blocked | {s['injection_block_rate'] * 100:.0f}% of agents |",
             f"| Planted email leaked to output | {s['pii_leak_rate'] * 100:.0f}% of agents |",

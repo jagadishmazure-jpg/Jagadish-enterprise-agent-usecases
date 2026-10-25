@@ -33,7 +33,7 @@ def main() -> None:
         f"Injection blocked: {s['injection_block_rate'] * 100:.0f}% of agents",
         f"PII leak: {s['pii_leak_rate'] * 100:.0f}% of agents",
         f"Audit chains valid: {s['audit_chains_valid']}",
-        f"Simulated demo cost: ${s['simulated_cost_demo_run_usd']}",
+        f"Simulated demo cost: ${s['simulated_cost_demo_run_usd']:.5f}",
         "",
         "Synthetic data, deterministic local run.",
         "Amber bars keep known misses visible.",

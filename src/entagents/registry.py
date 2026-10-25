@@ -9,6 +9,7 @@ BATCHES = [
     ["issue_triage", "doc_qa", "web_research", "email_draft", "support_escalation"],
     ["unit_test_gen", "doc_writer", "news_briefing", "travel_planner", "recipe_rec"],
     ["stock_research", "contract_review", "invoice_extract", "policy_compliance", "incident_summary"],
+    ["competitive_analysis", "debate_judge"],
 ]
 
 
