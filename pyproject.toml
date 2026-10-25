@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enterprise-agent-usecases"
+version = "0.1.0"
+description = "Runnable enterprise agent use cases that share one governed runtime: guards, routing, caching, retry budgets, grounding, approvals, audit and evals. Offline and deterministic."
+requires-python = ">=3.12"
+license = { text = "MIT" }
+readme = "README.md"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2", "ruff==0.14.1"]
+board = ["matplotlib==3.9.2"]
+
+[project.scripts]
+entagents = "entagents.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 200
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S"]
+ignore = ["S101", "S105", "S106", "S311", "S608"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S"]
+"scripts/*" = ["S603", "S607"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,137 @@
+{
+  "repo": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases",
+  "schema": "agent-card/v1",
+  "agents": [
+    {
+      "name": "sql-nl",
+      "title": "SQL in plain English",
+      "level": "Intermediate",
+      "tech": "SQLite + template planner",
+      "industry": "Analytics",
+      "tags": [
+        "text-to-sql",
+        "read-only",
+        "abstention"
+      ],
+      "summary": "Answers business questions over a local sales database with vetted, read-only SQL.",
+      "guardrails": [
+        "read-only SQLite authorizer",
+        "template allow-list (no free-form SQL)",
+        "abstains on unmapped questions",
+        "injection screen",
+        "audit log"
+      ],
+      "batch": 1,
+      "run": "entagents run sql-nl",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/sql-nl.md",
+      "task_score": 1.0,
+      "task_cases": 12,
+      "data": "synthetic"
+    },
+    {
+      "name": "code-review",
+      "title": "Code review",
+      "level": "Intermediate",
+      "tech": "Python AST rules",
+      "industry": "Software engineering",
+      "tags": [
+        "static-analysis",
+        "security",
+        "devex"
+      ],
+      "summary": "Reviews Python snippets for risky patterns and explains each finding with a fix hint.",
+      "guardrails": [
+        "never executes reviewed code",
+        "AST parse only",
+        "secret values masked in findings",
+        "injection screen",
+        "audit log"
+      ],
+      "batch": 1,
+      "run": "entagents run code-review",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/code-review.md",
+      "task_score": 0.9375,
+      "task_cases": 16,
+      "data": "synthetic"
+    },
+    {
+      "name": "resume-match",
+      "title": "Resume parsing and matching",
+      "level": "Intermediate",
+      "tech": "Rule parser + skill-coverage scorer",
+      "industry": "HR and recruiting",
+      "tags": [
+        "hr",
+        "fairness",
+        "explainable",
+        "human-in-the-loop"
+      ],
+      "summary": "Parses resumes, hides identity, ranks job fits with reasons, and holds shortlists for recruiter sign-off.",
+      "guardrails": [
+        "identity stripped before scoring",
+        "PII redaction",
+        "reason shown for every match",
+        "name-swap invariance test",
+        "recruiter approval to send",
+        "audit log"
+      ],
+      "batch": 1,
+      "run": "entagents run resume-match",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/resume-match.md",
+      "task_score": 1.0,
+      "task_cases": 12,
+      "data": "synthetic"
+    },
+    {
+      "name": "csv-analysis",
+      "title": "CSV data analysis",
+      "level": "Beginner",
+      "tech": "Python csv + statistics",
+      "industry": "Retail",
+      "tags": [
+        "analytics",
+        "tabular",
+        "abstention"
+      ],
+      "summary": "Answers questions about a CSV with computed statistics and states which columns and rows were used.",
+      "guardrails": [
+        "numbers computed, never generated",
+        "read-only file tool",
+        "abstains on unsupported questions",
+        "PII redaction",
+        "audit log"
+      ],
+      "batch": 1,
+      "run": "entagents run csv-analysis",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/csv-analysis.md",
+      "task_score": 1.0,
+      "task_cases": 7,
+      "data": "synthetic"
+    },
+    {
+      "name": "meeting-actions",
+      "title": "Meeting notes to action items",
+      "level": "Beginner",
+      "tech": "Pattern extractor",
+      "industry": "Productivity",
+      "tags": [
+        "summarisation",
+        "extraction",
+        "workflow"
+      ],
+      "summary": "Turns raw meeting notes into owner / task / due-date items and skips vague remarks.",
+      "guardrails": [
+        "explicit commitments only",
+        "PII redaction",
+        "injection screen",
+        "audit log"
+      ],
+      "batch": 1,
+      "run": "entagents run meeting-actions",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/meeting-actions.md",
+      "task_score": 0.9,
+      "task_cases": 10,
+      "data": "synthetic"
+    }
+  ]
+}
