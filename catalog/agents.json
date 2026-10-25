@@ -263,6 +263,132 @@
       "task_score": 1.0,
       "task_cases": 12,
       "data": "synthetic"
+    },
+    {
+      "name": "unit-test-gen",
+      "title": "Unit test generator",
+      "level": "Advanced",
+      "tech": "AST + doctest mining + mutation check",
+      "industry": "Software engineering",
+      "tags": [
+        "testing",
+        "code-generation",
+        "sandbox",
+        "mutation-testing"
+      ],
+      "summary": "Generates pytest tests from docstring examples, runs them in an isolated process and reports how many planted bugs they catch.",
+      "guardrails": [
+        "import and call allow-list before any execution",
+        "subprocess with empty environment and timeout",
+        "temporary directory only",
+        "audit log"
+      ],
+      "batch": 3,
+      "run": "entagents run unit-test-gen",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/unit-test-gen.md",
+      "task_score": 0.875,
+      "task_cases": 8,
+      "data": "synthetic"
+    },
+    {
+      "name": "doc-writer",
+      "title": "Documentation writer",
+      "level": "Beginner",
+      "tech": "Python AST",
+      "industry": "Software engineering",
+      "tags": [
+        "documentation",
+        "devex",
+        "code-analysis"
+      ],
+      "summary": "Writes a Markdown API reference from source code and lists what is undocumented or missing a return type.",
+      "guardrails": [
+        "reads source only, never executes it",
+        "describes only what the code declares",
+        "audit log"
+      ],
+      "batch": 3,
+      "run": "entagents run doc-writer",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/doc-writer.md",
+      "task_score": 1.0,
+      "task_cases": 6,
+      "data": "synthetic"
+    },
+    {
+      "name": "news-briefing",
+      "title": "News briefing (local corpus)",
+      "level": "Beginner",
+      "tech": "Date filter + Jaccard dedupe",
+      "industry": "Media and communications",
+      "tags": [
+        "summarisation",
+        "dedupe",
+        "citations",
+        "indirect-injection"
+      ],
+      "summary": "Builds a dated briefing from a local news feed, removes near-duplicate stories, groups by topic and cites every item.",
+      "guardrails": [
+        "items screened for injection and quarantined",
+        "every bullet cites an item id",
+        "date window enforced",
+        "audit log"
+      ],
+      "batch": 3,
+      "run": "entagents run news-briefing",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/news-briefing.md",
+      "task_score": 1.0,
+      "task_cases": 6,
+      "data": "synthetic"
+    },
+    {
+      "name": "travel-planner",
+      "title": "Travel planner",
+      "level": "Intermediate",
+      "tech": "Constraint fitting over a price catalog",
+      "industry": "Travel and hospitality",
+      "tags": [
+        "planning",
+        "budget",
+        "human-in-the-loop"
+      ],
+      "summary": "Builds a trip from a synthetic catalog within a hard budget, explains each pick, and says so when the budget cannot work.",
+      "guardrails": [
+        "hard budget check (never exceeds)",
+        "prices only from the catalog",
+        "booking held for approval",
+        "audit log"
+      ],
+      "batch": 3,
+      "run": "entagents run travel-planner",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/travel-planner.md",
+      "task_score": 1.0,
+      "task_cases": 7,
+      "data": "synthetic"
+    },
+    {
+      "name": "recipe-rec",
+      "title": "Recipe recommendation",
+      "level": "Beginner",
+      "tech": "Coverage ranking + hard filters",
+      "industry": "Consumer and food",
+      "tags": [
+        "recommendation",
+        "personalisation",
+        "safety-filter"
+      ],
+      "summary": "Suggests recipes that use what is in the pantry, never suggests one containing a listed allergen, and says what is missing.",
+      "guardrails": [
+        "allergens are a hard filter, not a score",
+        "excluded recipes listed with the reason",
+        "time limit respected",
+        "audit log"
+      ],
+      "batch": 3,
+      "run": "entagents run recipe-rec",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/recipe-rec.md",
+      "task_score": 1.0,
+      "task_cases": 8,
+      "data": "synthetic"
     }
   ]
 }

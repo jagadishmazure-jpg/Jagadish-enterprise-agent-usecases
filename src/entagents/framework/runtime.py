@@ -129,6 +129,10 @@ class Runtime:
             self.stats["denied_tools"] += 1
             self.audit.append({"agent": name, "status": "denied", "reason": str(e)})
             return {"status": "denied", "reason": str(e), "output": None}
+        except (ValueError, KeyError, TypeError, SyntaxError) as e:
+            # Bad input: fail closed with the error type only (never echo raw payload values).
+            self.audit.append({"agent": name, "status": "error", "error": type(e).__name__})
+            return {"status": "error", "reason": f"invalid input ({type(e).__name__})", "output": None}
 
         red_out = 0
 

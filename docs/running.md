@@ -15,5 +15,5 @@ pip install -e ".[board]" && python scripts/evidence_board.py
 CI runs ruff, pytest, the printed test count, `render_docs.py --check` (which re-runs every eval), the hashed brand check and gitleaks over full history. CodeQL runs separately.
 
 Test count: <!-- BEGIN:tests -->
-**102 tests**
+**136 tests**
 <!-- END:tests -->

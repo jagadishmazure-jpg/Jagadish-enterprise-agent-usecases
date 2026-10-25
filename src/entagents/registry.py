@@ -7,6 +7,7 @@ import importlib
 BATCHES = [
     ["sql_nl", "code_review", "resume_match", "csv_analysis", "meeting_actions"],
     ["issue_triage", "doc_qa", "web_research", "email_draft", "support_escalation"],
+    ["unit_test_gen", "doc_writer", "news_briefing", "travel_planner", "recipe_rec"],
 ]
 
 
