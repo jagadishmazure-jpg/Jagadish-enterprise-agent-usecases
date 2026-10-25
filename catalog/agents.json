@@ -389,6 +389,137 @@
       "task_score": 1.0,
       "task_cases": 8,
       "data": "synthetic"
+    },
+    {
+      "name": "stock-research",
+      "title": "Stock research (simulated data)",
+      "level": "Intermediate",
+      "tech": "Seeded random walk + risk metrics",
+      "industry": "Financial services",
+      "tags": [
+        "finance",
+        "analytics",
+        "simulated-data",
+        "refusal"
+      ],
+      "summary": "Computes return, volatility, drawdown and trend for fictional tickers on simulated prices, and refuses to give buy or sell advice.",
+      "guardrails": [
+        "simulated-data disclaimer on every answer",
+        "refuses buy/sell and price-target questions",
+        "numbers computed, not generated",
+        "audit log"
+      ],
+      "batch": 4,
+      "run": "entagents run stock-research",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/stock-research.md",
+      "task_score": 1.0,
+      "task_cases": 7,
+      "data": "synthetic"
+    },
+    {
+      "name": "contract-review",
+      "title": "Contract clause review",
+      "level": "Intermediate",
+      "tech": "Clause classifier + playbook rules",
+      "industry": "Legal",
+      "tags": [
+        "legal",
+        "risk",
+        "explainable",
+        "human-in-the-loop"
+      ],
+      "summary": "Splits a contract into clauses, compares each with a negotiation playbook and gives a risk level with the reason.",
+      "guardrails": [
+        "decision support only, lawyer signs off",
+        "every risk has a stated reason",
+        "flags missing standard clauses",
+        "PII redaction",
+        "audit log"
+      ],
+      "batch": 4,
+      "run": "entagents run contract-review",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/contract-review.md",
+      "task_score": 0.9167,
+      "task_cases": 12,
+      "data": "synthetic"
+    },
+    {
+      "name": "invoice-extract",
+      "title": "Invoice extraction",
+      "level": "Intermediate",
+      "tech": "Regex extraction + strict schema + reconciliation",
+      "industry": "Finance operations",
+      "tags": [
+        "document-ai",
+        "structured-output",
+        "validation",
+        "human-review"
+      ],
+      "summary": "Extracts invoice fields into a fixed schema, checks that every line and total adds up, and routes mismatches to a person.",
+      "guardrails": [
+        "fixed schema, extra or missing keys rejected",
+        "arithmetic reconciliation",
+        "mismatch routed to human review",
+        "errors never echo raw values",
+        "audit log"
+      ],
+      "batch": 4,
+      "run": "entagents run invoice-extract",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/invoice-extract.md",
+      "task_score": 1.0,
+      "task_cases": 8,
+      "data": "synthetic"
+    },
+    {
+      "name": "policy-compliance",
+      "title": "Policy compliance check",
+      "level": "Beginner",
+      "tech": "Rules engine over configuration",
+      "industry": "Governance, risk and compliance",
+      "tags": [
+        "compliance",
+        "audit",
+        "security",
+        "explainable"
+      ],
+      "summary": "Checks a system configuration against written controls and reports each failure with observed and expected values.",
+      "guardrails": [
+        "missing evidence reported as unknown, never as pass",
+        "observed vs expected on every finding",
+        "read-only",
+        "audit log"
+      ],
+      "batch": 4,
+      "run": "entagents run policy-compliance",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/policy-compliance.md",
+      "task_score": 1.0,
+      "task_cases": 8,
+      "data": "synthetic"
+    },
+    {
+      "name": "incident-summary",
+      "title": "Incident summary",
+      "level": "Intermediate",
+      "tech": "Log parser + temporal correlation",
+      "industry": "IT operations",
+      "tags": [
+        "sre",
+        "observability",
+        "summarisation"
+      ],
+      "summary": "Turns raw logs into a timeline with the first error, the likely trigger, affected services and impact window.",
+      "guardrails": [
+        "trigger labelled as correlation, not root cause",
+        "summary built only from log lines",
+        "PII redaction on log text",
+        "audit log"
+      ],
+      "batch": 4,
+      "run": "entagents run incident-summary",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/incident-summary.md",
+      "task_score": 1.0,
+      "task_cases": 5,
+      "data": "synthetic"
     }
   ]
 }

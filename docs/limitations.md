@@ -14,3 +14,4 @@ Known misses kept as tests and visible in scores:
 | issue-triage | an issue with no keywords ("Sidebar overlaps the chart") falls back to `question` | `test_triage_known_miss_no_keywords` |
 | doc-qa | "parental leave policy" is answered from the general leave policy because title words give enough coverage | `test_docqa_known_miss_parental_leave` |
 | unit-test-gen | a function with one doctest example (`sign(4)`) yields tests too weak to catch a bug in the negative branch | `test_unit_test_gen_known_miss_weak_examples` |
+| contract-review | "hold harmless" wording is indemnity but is classified `other` | `test_contract_known_miss_hold_harmless` |

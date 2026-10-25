@@ -5,13 +5,13 @@
 <!-- BEGIN:headline -->
 | What | Measured (synthetic data, deterministic local run) |
 |---|---|
-| Agents built | 15 of 22 (batches 3 of 5) |
-| Task eval cases | 142, mean task score 97.0% |
+| Agents built | 20 of 22 (batches 4 of 5) |
+| Task eval cases | 182, mean task score 97.4% |
 | Planted prompt injection blocked | 100% of agents |
 | Planted email leaked to output | 0% of agents |
 | Audit chains valid | True |
-| Demo run, simulated cost (unit prices, not real spend) | $0.000692 |
-| Tests | 136 |
+| Demo run, simulated cost (unit prices, not real spend) | $0.000766 |
+| Tests | 169 |
 <!-- END:headline -->
 
 ![evidence board](results/evidence_board.png)
@@ -38,6 +38,11 @@ Each agent has its own page with level, tech, industry, tags, run command, real 
 | 13 | [News briefing (local corpus)](docs/agents/news-briefing.md) | Beginner | Media and communications | Date filter + Jaccard dedupe | 100.0% (6) |
 | 14 | [Travel planner](docs/agents/travel-planner.md) | Intermediate | Travel and hospitality | Constraint fitting over a price catalog | 100.0% (7) |
 | 15 | [Recipe recommendation](docs/agents/recipe-rec.md) | Beginner | Consumer and food | Coverage ranking + hard filters | 100.0% (8) |
+| 16 | [Stock research (simulated data)](docs/agents/stock-research.md) | Intermediate | Financial services | Seeded random walk + risk metrics | 100.0% (7) |
+| 17 | [Contract clause review](docs/agents/contract-review.md) | Intermediate | Legal | Clause classifier + playbook rules | 91.7% (12) |
+| 18 | [Invoice extraction](docs/agents/invoice-extract.md) | Intermediate | Finance operations | Regex extraction + strict schema + reconciliation | 100.0% (8) |
+| 19 | [Policy compliance check](docs/agents/policy-compliance.md) | Beginner | Governance, risk and compliance | Rules engine over configuration | 100.0% (8) |
+| 20 | [Incident summary](docs/agents/incident-summary.md) | Intermediate | IT operations | Log parser + temporal correlation | 100.0% (5) |
 <!-- END:agents -->
 
 ## Purpose and who it is for
@@ -81,7 +86,7 @@ python scripts/render_docs.py       # regenerate agent pages, catalog JSON and t
 ```
 
 Test count: <!-- BEGIN:tests -->
-**136 tests**
+**169 tests**
 <!-- END:tests -->
 
 There is no cloud path. The "model tiers" are deterministic local functions; the cost line uses made-up unit prices to show the accounting and is labelled simulated.
@@ -112,7 +117,7 @@ Deterministic rules stand in for models, so coverage is narrow by design. Known 
 | Batch 1: SQL in plain English, code review, resume matching, CSV analysis, meeting actions | Built |
 | Batch 2: issue triage, document Q&A, web research (offline), email drafting, support escalation | Built |
 | Batch 3: unit test generator, documentation writer, news briefing, travel planner, recipe recommendation | Built |
-| Batch 4: stock research (simulated), contract clauses, invoice extraction, policy compliance, incident summary | Planned |
+| Batch 4: stock research (simulated), contract clauses, invoice extraction, policy compliance, incident summary | Built |
 | Batch 5: competitive analysis, multi-agent debate with judge | Planned |
 | Catalog metadata export (`catalog/agents.json`) | Built |
 | Optional local LLM backend behind the same interface | Planned |
