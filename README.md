@@ -5,13 +5,13 @@
 <!-- BEGIN:headline -->
 | What | Measured (synthetic data, deterministic local run) |
 |---|---|
-| Agents built | 5 of 22 (batches 1 of 5) |
-| Task eval cases | 57, mean task score 96.8% |
+| Agents built | 10 of 22 (batches 2 of 5) |
+| Task eval cases | 107, mean task score 96.8% |
 | Planted prompt injection blocked | 100% of agents |
 | Planted email leaked to output | 0% of agents |
 | Audit chains valid | True |
-| Demo run, simulated cost (unit prices, not real spend) | $4.4e-05 |
-| Tests | 65 |
+| Demo run, simulated cost (unit prices, not real spend) | $0.000395 |
+| Tests | 102 |
 <!-- END:headline -->
 
 ![evidence board](results/evidence_board.png)
@@ -28,6 +28,11 @@ Each agent has its own page with level, tech, industry, tags, run command, real 
 | 3 | [Resume parsing and matching](docs/agents/resume-match.md) | Intermediate | HR and recruiting | Rule parser + skill-coverage scorer | 100.0% (12) |
 | 4 | [CSV data analysis](docs/agents/csv-analysis.md) | Beginner | Retail | Python csv + statistics | 100.0% (7) |
 | 5 | [Meeting notes to action items](docs/agents/meeting-actions.md) | Beginner | Productivity | Pattern extractor | 90.0% (10) |
+| 6 | [GitHub issue triage](docs/agents/issue-triage.md) | Beginner | Software engineering | Keyword classifier + Jaccard dedupe | 91.7% (12) |
+| 7 | [Document Q&A with citations](docs/agents/doc-qa.md) | Intermediate | Enterprise knowledge | BM25 retrieval + citation check | 92.3% (13) |
+| 8 | [Web research report (offline corpus)](docs/agents/web-research.md) | Advanced | Research and strategy | Planner + BM25 + source screening | 100.0% (5) |
+| 9 | [Email drafting with human sign-off](docs/agents/email-draft.md) | Beginner | Sales and customer success | Templates + wording rules | 100.0% (8) |
+| 10 | [Support with escalation](docs/agents/support-escalation.md) | Intermediate | Customer service | Intent rules + help-center lookup | 100.0% (12) |
 <!-- END:agents -->
 
 ## Purpose and who it is for
@@ -71,7 +76,7 @@ python scripts/render_docs.py       # regenerate agent pages, catalog JSON and t
 ```
 
 Test count: <!-- BEGIN:tests -->
-**65 tests**
+**102 tests**
 <!-- END:tests -->
 
 There is no cloud path. The "model tiers" are deterministic local functions; the cost line uses made-up unit prices to show the accounting and is labelled simulated.
@@ -100,7 +105,7 @@ Deterministic rules stand in for models, so coverage is narrow by design. Known 
 |---|---|
 | Shared runtime (guards, controls, grounding, approval, audit, evals) | Built |
 | Batch 1: SQL in plain English, code review, resume matching, CSV analysis, meeting actions | Built |
-| Batch 2: issue triage, document Q&A, web research (offline), email drafting, support escalation | Planned |
+| Batch 2: issue triage, document Q&A, web research (offline), email drafting, support escalation | Built |
 | Batch 3: unit test generator, documentation writer, news briefing, travel planner, recipe recommendation | Planned |
 | Batch 4: stock research (simulated), contract clauses, invoice extraction, policy compliance, incident summary | Planned |
 | Batch 5: competitive analysis, multi-agent debate with judge | Planned |

@@ -12,7 +12,7 @@ flowchart TB
       evals[evals.py: task_eval, safety_eval]
     end
     subgraph agents [Use-case agents]
-      a1[sql_nl] & a2[code_review] & a3[resume_match] & a4[csv_analysis] & a5[meeting_actions]
+      a1[sql_nl] & a2[code_review] & a3[resume_match] & a4[csv_analysis] & a5[meeting_actions] & b2[batch 2..5 agents]
     end
     agents --> runtime
     runtime --> guards & controls & approval & audit

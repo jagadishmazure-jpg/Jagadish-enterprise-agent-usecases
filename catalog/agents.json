@@ -132,6 +132,137 @@
       "task_score": 0.9,
       "task_cases": 10,
       "data": "synthetic"
+    },
+    {
+      "name": "issue-triage",
+      "title": "GitHub issue triage",
+      "level": "Beginner",
+      "tech": "Keyword classifier + Jaccard dedupe",
+      "industry": "Software engineering",
+      "tags": [
+        "triage",
+        "classification",
+        "devops"
+      ],
+      "summary": "Labels new issues, sets priority and owning team, and flags likely duplicates of open issues.",
+      "guardrails": [
+        "suggests labels only (no write access to the tracker)",
+        "injection screen on issue text",
+        "PII redaction",
+        "audit log"
+      ],
+      "batch": 2,
+      "run": "entagents run issue-triage",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/issue-triage.md",
+      "task_score": 0.9167,
+      "task_cases": 12,
+      "data": "synthetic"
+    },
+    {
+      "name": "doc-qa",
+      "title": "Document Q&A with citations",
+      "level": "Intermediate",
+      "tech": "BM25 retrieval + citation check",
+      "industry": "Enterprise knowledge",
+      "tags": [
+        "rag",
+        "citations",
+        "abstention",
+        "hallucination-control"
+      ],
+      "summary": "Answers policy questions from a document set, cites the source, and says I don't know when the documents do not cover it.",
+      "guardrails": [
+        "answer must cite a retrieved document",
+        "unsupported claims dropped",
+        "score threshold then abstain",
+        "PII redaction",
+        "audit log"
+      ],
+      "batch": 2,
+      "run": "entagents run doc-qa",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/doc-qa.md",
+      "task_score": 0.9231,
+      "task_cases": 13,
+      "data": "synthetic"
+    },
+    {
+      "name": "web-research",
+      "title": "Web research report (offline corpus)",
+      "level": "Advanced",
+      "tech": "Planner + BM25 + source screening",
+      "industry": "Research and strategy",
+      "tags": [
+        "research",
+        "multi-step",
+        "citations",
+        "indirect-injection"
+      ],
+      "summary": "Plans sub-questions, retrieves pages from a local corpus, quarantines poisoned pages and writes a cited report.",
+      "guardrails": [
+        "retrieved pages screened for injection and quarantined",
+        "every point cites a page",
+        "abstains when nothing relevant is found",
+        "read-only search tool",
+        "audit log"
+      ],
+      "batch": 2,
+      "run": "entagents run web-research",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/web-research.md",
+      "task_score": 1.0,
+      "task_cases": 5,
+      "data": "synthetic"
+    },
+    {
+      "name": "email-draft",
+      "title": "Email drafting with human sign-off",
+      "level": "Beginner",
+      "tech": "Templates + wording rules",
+      "industry": "Sales and customer success",
+      "tags": [
+        "drafting",
+        "human-in-the-loop",
+        "communications"
+      ],
+      "summary": "Drafts short business emails from bullet points, removes commitment wording, and waits for a person to approve sending.",
+      "guardrails": [
+        "send is a risky action that needs a named approver",
+        "guarantee/promise wording removed and flagged",
+        "recipient address redacted in logs",
+        "audit log"
+      ],
+      "batch": 2,
+      "run": "entagents run email-draft",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/email-draft.md",
+      "task_score": 1.0,
+      "task_cases": 8,
+      "data": "synthetic"
+    },
+    {
+      "name": "support-escalation",
+      "title": "Support with escalation",
+      "level": "Intermediate",
+      "tech": "Intent rules + help-center lookup",
+      "industry": "Customer service",
+      "tags": [
+        "support",
+        "escalation",
+        "citations",
+        "human-handoff"
+      ],
+      "summary": "Answers routine tickets from the help center with a citation and hands legal, high-value or repeat-frustration cases to people.",
+      "guardrails": [
+        "answers only from help-center articles (cited)",
+        "explicit escalation rules",
+        "no refunds issued by the bot",
+        "PII redaction",
+        "audit log"
+      ],
+      "batch": 2,
+      "run": "entagents run support-escalation",
+      "page": "https://github.com/jagadishmazure-jpg/Jagadish-enterprise-agent-usecases/blob/main/docs/agents/support-escalation.md",
+      "task_score": 1.0,
+      "task_cases": 12,
+      "data": "synthetic"
     }
   ]
 }

@@ -12,11 +12,11 @@ What it proves, with numbers regenerated on every CI run:
 <!-- BEGIN:headline -->
 | What | Measured (synthetic data, deterministic local run) |
 |---|---|
-| Agents built | 5 of 22 (batches 1 of 5) |
-| Task eval cases | 57, mean task score 96.8% |
+| Agents built | 10 of 22 (batches 2 of 5) |
+| Task eval cases | 107, mean task score 96.8% |
 | Planted prompt injection blocked | 100% of agents |
 | Planted email leaked to output | 0% of agents |
 | Audit chains valid | True |
-| Demo run, simulated cost (unit prices, not real spend) | $4.4e-05 |
-| Tests | 65 |
+| Demo run, simulated cost (unit prices, not real spend) | $0.000395 |
+| Tests | 102 |
 <!-- END:headline -->
