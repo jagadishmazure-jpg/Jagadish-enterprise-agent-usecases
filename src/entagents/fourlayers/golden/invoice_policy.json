@@ -1,0 +1,193 @@
+{
+ "cases": {
+  "INV-2001": {
+   "clause": "AP-5",
+   "decision": "approve",
+   "invoice_no": "INV-2001"
+  },
+  "INV-2002": {
+   "clause": "AP-5",
+   "decision": "approve",
+   "invoice_no": "INV-2002"
+  },
+  "INV-2003": {
+   "clause": "AP-5",
+   "decision": "approve",
+   "invoice_no": "INV-2003"
+  },
+  "INV-2004": {
+   "clause": "AP-5",
+   "decision": "approve",
+   "invoice_no": "INV-2004"
+  },
+  "INV-2005": {
+   "clause": "AP-5",
+   "decision": "approve",
+   "invoice_no": "INV-2005"
+  },
+  "INV-2006": {
+   "clause": "AP-2",
+   "decision": "hold",
+   "invoice_no": "INV-2006"
+  },
+  "INV-2007": {
+   "clause": "AP-2",
+   "decision": "hold",
+   "invoice_no": "INV-2007"
+  },
+  "INV-2008": {
+   "clause": "AP-2",
+   "decision": "hold",
+   "invoice_no": "INV-2008"
+  },
+  "INV-2009": {
+   "clause": "AP-2",
+   "decision": "hold",
+   "invoice_no": "INV-2009"
+  },
+  "INV-2010": {
+   "clause": "AP-2",
+   "decision": "hold",
+   "invoice_no": "INV-2010"
+  },
+  "INV-2011": {
+   "clause": "AP-1",
+   "decision": "hold",
+   "invoice_no": "INV-2011"
+  },
+  "INV-2012": {
+   "clause": "AP-1",
+   "decision": "hold",
+   "invoice_no": "INV-2012"
+  },
+  "INV-2013": {
+   "clause": "AP-1",
+   "decision": "hold",
+   "invoice_no": "INV-2013"
+  },
+  "INV-2014": {
+   "clause": "AP-1",
+   "decision": "hold",
+   "invoice_no": "INV-2014"
+  },
+  "INV-2015": {
+   "clause": "AP-1",
+   "decision": "hold",
+   "invoice_no": "INV-2015"
+  },
+  "INV-2016": {
+   "clause": "AP-3",
+   "decision": "reject",
+   "invoice_no": "INV-2016"
+  },
+  "INV-2017": {
+   "clause": "AP-3",
+   "decision": "reject",
+   "invoice_no": "INV-2017"
+  },
+  "INV-2018": {
+   "clause": "AP-3",
+   "decision": "reject",
+   "invoice_no": "INV-2018"
+  },
+  "INV-2019": {
+   "clause": "AP-3",
+   "decision": "reject",
+   "invoice_no": "INV-2019"
+  },
+  "INV-2020": {
+   "clause": "AP-3",
+   "decision": "reject",
+   "invoice_no": "INV-2020"
+  },
+  "INV-2021": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2021"
+  },
+  "INV-2022": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2022"
+  },
+  "INV-2023": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2023"
+  },
+  "INV-2024": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2024"
+  },
+  "INV-2025": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2025"
+  },
+  "INV-2026": {
+   "clause": "AP-6",
+   "decision": "hold",
+   "invoice_no": "INV-2026"
+  },
+  "INV-2027": {
+   "clause": "AP-6",
+   "decision": "hold",
+   "invoice_no": "INV-2027"
+  },
+  "INV-2028": {
+   "clause": "AP-6",
+   "decision": "hold",
+   "invoice_no": "INV-2028"
+  },
+  "INV-2029": {
+   "clause": "AP-6",
+   "decision": "hold",
+   "invoice_no": "INV-2029"
+  },
+  "INV-2030": {
+   "clause": "AP-6",
+   "decision": "hold",
+   "invoice_no": "INV-2030"
+  },
+  "INV-2031": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2031"
+  },
+  "INV-2032": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2032"
+  },
+  "INV-2033": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2033"
+  },
+  "INV-2034": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2034"
+  },
+  "INV-2035": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2035"
+  },
+  "INV-2036": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2036"
+  },
+  "INV-2037": {
+   "clause": "AP-4",
+   "decision": "reject",
+   "invoice_no": "INV-2037"
+  }
+ },
+ "cost_per_case": 0.00041203,
+ "prompt": "invoice_policy",
+ "sha": "a8abf6a61ddc",
+ "version": 2
+}

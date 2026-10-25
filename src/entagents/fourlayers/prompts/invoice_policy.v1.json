@@ -1,0 +1,8 @@
+{
+  "id": "invoice_policy",
+  "version": 1,
+  "changelog": "First version: extract the invoice and say whether to pay it.",
+  "template": "You review supplier invoices for a payables team. Read the invoice below and reply with JSON holding the extracted fields and a decision of approve, hold or reject.\n\nINVOICE:\n{invoice}\n\nPOLICY:\n{policy}",
+  "output_keys": ["invoice_no", "decision"],
+  "cite_clause": false
+}

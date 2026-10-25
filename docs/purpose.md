@@ -18,5 +18,5 @@ What it proves, with numbers regenerated on every CI run:
 | Planted email leaked to output | 0% of agents |
 | Audit chains valid | True |
 | Demo run, simulated cost (unit prices, not real spend) | $0.001123 |
-| Tests | 184 |
+| Tests | 250 |
 <!-- END:headline -->

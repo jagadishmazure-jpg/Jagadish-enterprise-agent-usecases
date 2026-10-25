@@ -11,7 +11,7 @@
 | Planted email leaked to output | 0% of agents |
 | Audit chains valid | True |
 | Demo run, simulated cost (unit prices, not real spend) | $0.001123 |
-| Tests | 184 |
+| Tests | 250 |
 <!-- END:headline -->
 
 ![evidence board](results/evidence_board.png)
@@ -88,7 +88,7 @@ python scripts/render_docs.py       # regenerate agent pages, catalog JSON and t
 ```
 
 Test count: <!-- BEGIN:tests -->
-**184 tests**
+**250 tests**
 <!-- END:tests -->
 
 There is no cloud path. The "model tiers" are deterministic local functions; the cost line uses made-up unit prices to show the accounting and is labelled simulated.
@@ -126,9 +126,18 @@ Deterministic rules stand in for models, so coverage is narrow by design. Known 
 | Judge calibration against human labels (Cohen's kappa) for the debate agent | Planned |
 | Cloud deployment | Not planned (offline by design) |
 
+## Five layers of agent engineering (prompt, context, harness, loop, graph)
+
+One synthetic invoice-approval task solved five times, adding one layer each time. Measured on 37 synthetic
+invoices with a simulated model (simulated cost and latency): accuracy 27.0% (prompt) -> 54.1% (context) ->
+81.1% (harness) -> 94.6% (loop) -> 94.6% (graph). The graph keeps the loop's accuracy and adds a 19.8% lower
+simulated p50 latency, zero redone nodes after a crash and 37/37 invalid routes blocked. Includes a versioned
+prompt registry with a golden CI gate and a reusable `LoopPolicy`. See [docs/five-layers.md](docs/five-layers.md)
+and [results/layers_board.png](results/layers_board.png).
+
 ## Docs
 
-[Purpose](docs/purpose.md) · [Architecture](docs/architecture.md) · [How it works](docs/how-it-works.md) · [Code and output](docs/code-and-output.md) · [Running](docs/running.md) · [Guardrails](docs/guardrails.md) · [Limitations](docs/limitations.md) · [Threat model](docs/threat-model.md) · [Implementation guide](docs/implementation-guide.md) · [Interview points](docs/interview-points.md) · [ADRs](docs/adr/)
+[Purpose](docs/purpose.md) · [Architecture](docs/architecture.md) · [How it works](docs/how-it-works.md) · [Code and output](docs/code-and-output.md) · [Running](docs/running.md) · [Guardrails](docs/guardrails.md) · [Limitations](docs/limitations.md) · [Threat model](docs/threat-model.md) · [Implementation guide](docs/implementation-guide.md) · [Interview points](docs/interview-points.md) · [Five layers](docs/five-layers.md) · [ADRs](docs/adr/)
 
 ## Related repos
 
