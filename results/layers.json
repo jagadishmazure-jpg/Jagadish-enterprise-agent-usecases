@@ -1,0 +1,138 @@
+{
+ "graph": {
+  "crash_resume": {
+   "nodes_done_before_crash": 4,
+   "nodes_redone_freeform_loop": 4,
+   "nodes_redone_graph": 0
+  },
+  "invalid_transitions": {
+   "attempted": 37,
+   "blocked": 37,
+   "followed": 0
+  },
+  "parallel": {
+   "real_wall_ms_two_50ms_branches": 50,
+   "sim_p50_ms_parallel": 1691.9,
+   "sim_p50_ms_sequential": 2110.5,
+   "sim_saving_pct": 19.8
+  },
+  "route_audit": {
+   "identical_route_hashes": 37,
+   "runs": 37
+  }
+ },
+ "l3_guard_hits": 5,
+ "l3_retries": 9,
+ "l4_end_states": {
+  "stalled": 2,
+  "success": 35
+ },
+ "layers": {
+  "L1 prompt": {
+   "accuracy": 0.2703,
+   "cases": 37,
+   "checked_output": 0.0,
+   "cited_correct": 0.0,
+   "model_calls_per_case": 1.0,
+   "sim_cost_per_accepted_usd": 0.000218,
+   "sim_cost_per_case_usd": 5.892e-05,
+   "sim_latency_p50_ms": 455.9,
+   "tokens_per_case": 109.3,
+   "wrong_by_kind": {
+    "bad_math": 5,
+    "bad_vendor": 5,
+    "clean": 0,
+    "injection": 5,
+    "missing": 0,
+    "ocr": 5,
+    "ocr_hard": 2,
+    "over_limit": 5
+   }
+  },
+  "L2 context": {
+   "accuracy": 0.5405,
+   "cases": 37,
+   "checked_output": 0.0,
+   "cited_correct": 0.5405,
+   "model_calls_per_case": 2.0,
+   "sim_cost_per_accepted_usd": 0.00048562,
+   "sim_cost_per_case_usd": 0.0002625,
+   "sim_latency_p50_ms": 911.1,
+   "tokens_per_case": 582.1,
+   "wrong_by_kind": {
+    "bad_math": 5,
+    "bad_vendor": 0,
+    "clean": 0,
+    "injection": 5,
+    "missing": 0,
+    "ocr": 5,
+    "ocr_hard": 2,
+    "over_limit": 0
+   }
+  },
+  "L3 harness": {
+   "accuracy": 0.8108,
+   "cases": 37,
+   "checked_output": 1.0,
+   "cited_correct": 0.8108,
+   "model_calls_per_case": 3.0,
+   "sim_cost_per_accepted_usd": 0.00050817,
+   "sim_cost_per_case_usd": 0.00041203,
+   "sim_latency_p50_ms": 1798.9,
+   "tokens_per_case": 746.5,
+   "wrong_by_kind": {
+    "bad_math": 0,
+    "bad_vendor": 0,
+    "clean": 0,
+    "injection": 0,
+    "missing": 0,
+    "ocr": 5,
+    "ocr_hard": 2,
+    "over_limit": 0
+   }
+  },
+  "L4 loop": {
+   "accuracy": 0.9459,
+   "cases": 37,
+   "checked_output": 1.0,
+   "cited_correct": 0.9459,
+   "model_calls_per_case": 4.38,
+   "sim_cost_per_accepted_usd": 0.00049709,
+   "sim_cost_per_case_usd": 0.00047022,
+   "sim_latency_p50_ms": 2190.3,
+   "tokens_per_case": 848.9,
+   "wrong_by_kind": {
+    "bad_math": 0,
+    "bad_vendor": 0,
+    "clean": 0,
+    "injection": 0,
+    "missing": 0,
+    "ocr": 0,
+    "ocr_hard": 2,
+    "over_limit": 0
+   }
+  },
+  "L5 graph": {
+   "accuracy": 0.9459,
+   "cases": 37,
+   "checked_output": 1.0,
+   "cited_correct": 0.9459,
+   "model_calls_per_case": 4.43,
+   "sim_cost_per_accepted_usd": 0.00048354,
+   "sim_cost_per_case_usd": 0.00045741,
+   "sim_latency_p50_ms": 1691.9,
+   "tokens_per_case": 843.9,
+   "wrong_by_kind": {
+    "bad_math": 0,
+    "bad_vendor": 0,
+    "clean": 0,
+    "injection": 0,
+    "missing": 0,
+    "ocr": 0,
+    "ocr_hard": 2,
+    "over_limit": 0
+   }
+  }
+ },
+ "note": "Synthetic invoices, simulated model, SIMULATED token prices and latency. Deterministic."
+}
