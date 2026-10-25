@@ -11,7 +11,7 @@
 | Planted email leaked to output | 0% of agents |
 | Audit chains valid | True |
 | Demo run, simulated cost (unit prices, not real spend) | $0.001123 |
-| Tests | 184 |
+| Tests | 211 |
 <!-- END:headline -->
 
 ![evidence board](results/evidence_board.png)
@@ -88,10 +88,16 @@ python scripts/render_docs.py       # regenerate agent pages, catalog JSON and t
 ```
 
 Test count: <!-- BEGIN:tests -->
-**184 tests**
+**211 tests**
 <!-- END:tests -->
 
 There is no cloud path. The "model tiers" are deterministic local functions; the cost line uses made-up unit prices to show the accounting and is labelled simulated.
+
+## Small step router (confidence handoff)
+
+A 144-weight classifier decides each agent step (next worker, safe to run, stop) and hands low-confidence steps to a stronger decider, which is **simulated** here. On 1,618 held-out synthetic steps at the tuned threshold of 0.9, the tiny model decided 85.5% of steps with 97.3% agreement with an always-big baseline, blocked 13 of 13 unsafe steps and saved 85.5% of simulated cost. Risky publishes still wait for a named approver and every decision is audited. Model card and limitations: [docs/small-router.md](docs/small-router.md).
+
+![router evidence board](results/router_board.png)
 
 ## Guardrails and security controls
 
@@ -122,13 +128,15 @@ Deterministic rules stand in for models, so coverage is narrow by design. Known 
 | Batch 4: stock research (simulated), contract clauses, invoice extraction, policy compliance, incident summary | Built |
 | Batch 5: competitive analysis, multi-agent debate with judge | Built |
 | Catalog metadata export (`catalog/agents.json`) | Built |
+| Small step router: tiny classifier, confidence handoff to a simulated stronger decider, rule fallback, approval and audit, threshold sweep, evidence board | Built |
+| Router confidence calibration (reliability curve) and training on real logged runs | Planned |
 | Optional local LLM backend behind the same interface | Planned |
 | Judge calibration against human labels (Cohen's kappa) for the debate agent | Planned |
 | Cloud deployment | Not planned (offline by design) |
 
 ## Docs
 
-[Purpose](docs/purpose.md) · [Architecture](docs/architecture.md) · [How it works](docs/how-it-works.md) · [Code and output](docs/code-and-output.md) · [Running](docs/running.md) · [Guardrails](docs/guardrails.md) · [Limitations](docs/limitations.md) · [Threat model](docs/threat-model.md) · [Implementation guide](docs/implementation-guide.md) · [Interview points](docs/interview-points.md) · [ADRs](docs/adr/)
+[Purpose](docs/purpose.md) · [Architecture](docs/architecture.md) · [How it works](docs/how-it-works.md) · [Code and output](docs/code-and-output.md) · [Running](docs/running.md) · [Guardrails](docs/guardrails.md) · [Limitations](docs/limitations.md) · [Threat model](docs/threat-model.md) · [Implementation guide](docs/implementation-guide.md) · [Interview points](docs/interview-points.md) · [Small router](docs/small-router.md) · [ADRs](docs/adr/)
 
 ## Related repos
 

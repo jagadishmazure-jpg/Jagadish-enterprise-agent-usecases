@@ -29,6 +29,8 @@ jobs:
         run: entagents eval --out /tmp/results.json
       - name: results.json, agent pages, catalog JSON and README match a fresh run
         run: python scripts/render_docs.py --check
+      - name: Small router results match a fresh run (synthetic data, simulated prices)
+        run: python -m entagents.router.evaluate --out results/router.json --check
       - name: Brand check (hashed blocklist)
         run: python scripts/check_brands.py
 

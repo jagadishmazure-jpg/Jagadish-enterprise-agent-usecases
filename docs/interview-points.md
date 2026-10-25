@@ -7,3 +7,9 @@
 - **Evals as a gate.** Every agent has task cases plus shared safety probes; CI re-runs them and fails on drift, and safety metrics must be perfect (block rate 100%, leak rate 0%).
 - **Honesty.** Known misses stay in the eval sets and in the tests, and every number is regenerated from a run.
 - **Fairness in hiring.** Identity is stripped before scoring and a name-swap test proves scores do not change; the deeper fairness metrics live in the recruiting fairness repo.
+
+## Small step router
+
+- Tiny model decides 85.5% of held-out synthetic steps at 97.3% agreement with always-big; threshold tuned on validation, not test.
+- Guardrails sit after the router, so no confidence level skips human approval or the audit log.
+- Split by run to avoid leakage; savings are simulated and equal the tiny-model share only because it is priced at zero.
